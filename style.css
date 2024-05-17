@@ -5,24 +5,44 @@
 }
 
 body {
+  background-color: #0d1117 !important;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(
-    109.6deg,
-    rgb(36, 45, 57) 11.2%,
-    rgb(16, 37, 60) 51.2%,
-    rgb(0, 0, 0) 98.6%
-  );
   color: #fff !important;
+  z-index: 1;
+}
+
+.add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 640px;
+  padding-bottom: 10px;
+}
+
+.add button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  background: #14a44d;
+  color: #fff;
+  transition: 0.5s ease;
+}
+
+.add button:hover {
+  background-color: transparent;
+  border: 1px solid #14a44d;
+  border-radius: 0;
 }
 
 form {
   width: 40%;
-  border: 1px solid #fff;
-  border-radius: 10px;
+  border-top: 1px solid #fff;
   padding: 2rem;
   margin-bottom: 150px;
 }
@@ -32,6 +52,8 @@ form .form-group {
   justify-content: space-between !important;
   align-items: center !important;
   padding: 10px 0;
+  position: relative !important;
+  border-bottom: 1px solid #222;
 }
 
 form .form-group .inner-div {
@@ -46,4 +68,113 @@ form .form-group .inner-div input {
 
 form .form-group .inner-div span {
   padding: 0.5rem;
+}
+
+form .form-group .inner-div :where(.fa-solid, .ri-pencil-fill) {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+form .form-group .inner-div .fa-solid:hover {
+  color: red;
+}
+
+form .form-group .inner-div .ri-pencil-fill:hover {
+  color: lightblue;
+}
+
+.modall,
+.modall2 {
+  width: 600px;
+  height: 250px;
+  padding: 20px;
+  background-color: #fff;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  z-index: 1000;
+  color: #000;
+  display: none;
+}
+
+.modall h3,
+.modall2 h3 {
+  width: 100%;
+  height: 30px;
+}
+
+.modall .inner-modal,
+.modall2 .inner-modal2 {
+  width: 100%;
+  height: 170px;
+  display: flex;
+  align-items: center;
+}
+
+.modall .inner-modal input,
+.modall2 .inner-modal2 input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+}
+
+.modall .dugmad,
+.modall2 .dugmad2 {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.modall .dugmad button,
+.modall2 .dugmad2 button {
+  margin-left: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: transparent;
+  transition: 0.5s ease;
+}
+
+.modall .dugmad button:first-child,
+.modall2 .dugmad2 button:first-child {
+  color: rgba(255, 0, 0, 0.7);
+  border: 1px solid rgba(255, 0, 0, 0.7);
+}
+
+.modall .dugmad button:first-child:hover,
+.modall2 .dugmad2 button:first-child:hover {
+  background-color: rgba(255, 0, 0, 0.7);
+  color: #fff;
+  border-radius: 0;
+}
+
+.modall .dugmad button:nth-child(2),
+.modall2 .dugmad2 button:nth-child(2) {
+  color: rgba(0, 0, 255, 0.7);
+  border: 1px solid rgba(0, 0, 255, 0.7);
+}
+
+.modall .dugmad button:nth-child(2):hover,
+.modall2 .dugmad2 button:nth-child(2):hover {
+  background-color: rgba(0, 0, 255, 0.7);
+  color: #fff;
+  border-radius: 0;
+}
+
+.overlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.9);
 }
